@@ -15,12 +15,12 @@ function App() {
 
 
   return (
-    <div className='backgroundContainer'>
       <main className='mainContainer'>
+        
         <article className='videoBox'>
           <section className='videoBox__video'>
             <div className='video__icons'></div>
-            <div className='video__footer'></div>
+            <div className='video__control'></div>
           </section>
           <section className='videoBox__description'>
             <h1 className='description__title'>{videoTitle}</h1>
@@ -32,6 +32,7 @@ function App() {
             <div className='footer__date'></div>
           </section>
         </article>
+
         <aside className='sidebar'>
           <div className='sidebar__header'>
             <p>Related Videos</p>
@@ -41,7 +42,6 @@ function App() {
           </div>
         </aside>
       </main>
-    </div>
   );
 }
 
