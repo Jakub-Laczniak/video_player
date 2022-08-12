@@ -1,0 +1,165 @@
+.videoBox {
+    @include tile(74%);
+    .videoBox__video {
+        background-color: $darkBlue;
+        height: 66%;
+        position: relative;
+        .video__icons {
+            position: absolute;
+            right: 0;
+            top: 0;
+            border: 1px solid red;
+            width: 9%;
+            height: 28%;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
+        };
+        .video__control {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 14%;
+            border: 1px solid green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        };
+    };
+    .videoBox__description {
+        height: 24%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 60px 50px 20px;
+        border-bottom: 2px solid $lightGrey;
+        .description__title {
+            font-size: 3rem;
+            color: $darkBlue;
+            font-weight: 600;
+        };
+        .description__text {
+            font-size: 1.4rem;
+            line-height: 140%;
+            color: $mediumGrey;
+        };
+        .description__icons {
+            display: flex;
+            justify-content: left;
+            width: 25%;
+            .icons__wrapper {
+                display: flex;
+                margin-right: 60px;
+                .icons__iconWrapper {
+                    @include iconWrapper();
+                    &.view { background-image: url('../assets/views-icon@3x.png') };
+                    &.heart { background-image: url('../assets/heart-icon@3x.png') };
+                    &.comment { background-image: url('../assets/comment-icon@3x.png') };
+                };
+                p {
+                    margin-left: 1rem;
+                    color: rgb(175, 175, 175);
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+            }
+        };
+    };
+    .videoBox__footer {
+        height: 10%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 50px;
+        align-items: center;
+        .footer__socialMedia {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .socialMedia__portrait {
+                width: 65px;
+                height: 65px;
+                border-radius: 50%;
+                background-color: $darkBlue;
+                margin-right: 25px;
+            }
+            .socialMedia__userData {
+                margin-right: 40px;
+                .userData__name{
+                    font-size: 1.5rem;
+                    font-weight: 600;;
+                    color: $darkBlue;
+                };
+                .userData__followers {
+                    font-size: 1.2rem;
+                    font-weight: 600;;
+                    margin-top: 5px;
+                    color: rgb(175, 175, 175);
+                };
+            };
+            .socialMedia__button {
+                width: 140px;
+                height: 40px;
+                border-radius: 20px;
+                border: 1px solid rgb(6, 115, 15);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                overflow: hidden;
+                .button__cross {
+                    width: 30%;
+                    height: 100%;
+                    background-color: rgb(14, 187, 27);
+                    position: relative;
+                    &:after {
+                        top:50%;
+                        left:10px;
+                        right:10px;
+                        height:3px;
+                        transform:translateY(-50%);
+                        content: "";
+                        position:absolute;
+                        background:#fff;
+                    };
+                    &:before {
+                        left:50%;
+                        top:10px; /* this defines how much black "border" there should be */
+                        bottom:10px;
+                        width:3px;
+                        transform:translateX(-50%);
+                        content: "";
+                        position:absolute;
+                        background:#fff;
+                      };
+                };
+                p {
+                    width: 70%;
+                    height: 100%;
+                    background-color: rgb(17, 209, 31);
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.05rem;
+                    font-weight: 600;
+                    padding-right: 5px;
+                };
+            };
+        };
+        .footer__date {
+            .date{
+                text-align: right;
+                font-size: 1.2rem;
+                font-weight: 600;;
+                color: $darkBlue;
+            };
+            .date__head {
+                text-align: right;
+                font-size: 1.2rem;
+                font-weight: 600;;
+                margin-bottom: 5px;
+                color: rgb(175, 175, 175);
+            };
+        }
+    };
+};

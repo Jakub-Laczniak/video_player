@@ -1,0 +1,22 @@
+$darkBlue: #3c424d;
+$lightGrey: rgb(239, 239, 239);
+$mediumGrey: rgb(147, 147, 147);
+
+@mixin tile ($width) {
+    width: $width;
+    height: 100%;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: hidden;
+};
+
+@mixin iconWrapper () {
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
