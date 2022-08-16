@@ -8,23 +8,148 @@
             position: absolute;
             right: 0;
             top: 0;
-            border: 1px solid red;
             width: 9%;
             height: 28%;
+            padding: 35px 0;
             display: flex;
             justify-content: space-around;
             flex-direction: column;
             align-items: center;
+            .icons {
+                @include iconWrapper;
+                transform: scale(140%);
+                &.heart { background-image: url('../assets/love-icon@3x.png')};
+                &.share { background-image: url('../assets/share-icon@3x.png')};
+            };
         };
         .video__control {
             position: absolute;
             bottom: 0;
-            width: 100%;
+            width: 93.8%;
+            left: 3.1%;
             height: 14%;
-            border: 1px solid green;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            .control__timeline {
+                width: 78%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .timeline__playButton {
+                    width: 55px;
+                    height: 55px;
+                    border-radius: 50%;
+                    background-color: #262b35;
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
+                    position: relative;
+                    &:after {
+                        top:50%;
+                        left:80px;
+                        height:6px;
+                        width: 500px;
+                        content: "";
+                        position:absolute;
+                        background:rgb(21, 169, 186);
+                        border-radius: 2px 0 0 2px
+                    };
+                    &::before {
+                        top:50%;
+                        left:500px;
+                        height:6px;
+                        width: 455px;
+                        content: "";
+                        position:absolute;
+                        background:rgb(72, 80, 93);
+                        border-radius: 0 2px 2px 0;
+                    };
+                    .playButton__triangle {
+                        width: 0; 
+                        height: 0; 
+                        border-top: 14px solid transparent;
+                        border-bottom: 14px solid transparent;
+                        border-left: 18px solid #fff;
+                        border-radius: 2px;
+                        margin-left: 5px
+                    };
+                };
+                span {
+                    color: white;
+                    font-size: 1.15rem;
+                    padding-right: 10px
+                };
+            };
+            .control__settings {
+                width: 22%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .settings__audioWrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 60%;
+                    height: 100%;
+                    .audio__icon {
+                        @include iconWrapper;
+                        background-image: url('../assets/volume-icon@3x.png');
+                        transform: scale(90%);
+                        margin-left: 20px;
+                    };
+                    .audio__line {
+                        position: relative;
+                        &:after {
+                            top:50%;
+                            left:-55px;
+                            height:6px;
+                            width: 80px;
+                            content: "";
+                            position:absolute;
+                            background:rgb(21, 169, 186);
+                            border-radius: 2px 0 0 2px
+                        };
+                        &::before {
+                            top:50%;
+                            left:0;
+                            height:6px;
+                            width: 75px;
+                            content: "";
+                            position:absolute;
+                            background:rgb(72, 80, 93);
+                            border-radius: 0 2px 2px 0;
+                        };
+                        .line__circle {
+                            background:rgb(21, 169, 186);
+                            width: 18px;
+                            height: 18px;
+                            position: absolute;
+                            left: 15px;
+                            top: -5px;
+                            border-radius: 50%;
+                        };
+                    };
+                };
+                .settings__video {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 30%;
+                    height: 100%;
+                    .video__resolution {
+                        color: #fff;
+                        font-size: 1.15rem;
+                        font-weight: bold;
+                    };
+                    .video__fullScreen {
+                        @include iconWrapper;
+                        background-image: url('../assets/fullscreen-icon@3x.png')
+                    }
+                };
+            };
         };
     };
     .videoBox__description {
@@ -123,7 +248,7 @@
                     };
                     &:before {
                         left:50%;
-                        top:10px; /* this defines how much black "border" there should be */
+                        top:10px;
                         bottom:10px;
                         width:3px;
                         transform:translateX(-50%);

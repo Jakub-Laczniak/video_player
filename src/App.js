@@ -18,10 +18,35 @@ function App() {
       <main className='mainContainer'>
         
         <article className='videoBox'>
+
           <section className='videoBox__video'>
-            <div className='video__icons'></div>
-            <div className='video__control'></div>
+            <div className='video__icons'>
+              <div className='icons heart'/>
+              <div className='icons share'/>
+            </div>
+            <div className='video__control'>
+              <div className='control__timeline'>
+                <div className='timeline__playButton'>
+                  <div className='playButton__triangle'></div>
+                </div>
+                <span><b>0:24</b> / 3:51</span>
+              </div>
+              <div className='control__settings'>
+                <div className='settings__audioWrapper'>
+                  <div className='audio__icon' />
+                  <div className='audio__line'>
+                    <div className='line__circle' />
+                  </div>
+                  <div />
+                </div>
+                <div className='settings__video'>
+                  <div className='video__resolution'>720</div>
+                  <div className='video__fullScreen' />
+                </div>
+              </div>
+            </div>
           </section>
+
           <section className='videoBox__description'>
             <h1 className='description__title'>{videoTitle}</h1>
             <p className='description__text'>{videoDescription}</p>
@@ -56,6 +81,7 @@ function App() {
                 <p className='date'>8 March, 2007</p>
             </div>
           </section>
+
         </article>
 
         <aside className='sidebar'>
@@ -66,6 +92,7 @@ function App() {
             {videosArray.map(data => <SidebarVideo data={data}/>)}
           </div>
         </aside>
+
       </main>
   );
 }
